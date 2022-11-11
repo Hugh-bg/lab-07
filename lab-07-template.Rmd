@@ -46,14 +46,16 @@ The distribution is left-skewed, this suggests that the majority of students rat
 # this uses the patchwork package loaded above
 # learn more about patchwork at https://patchwork.data-imaginist.com/
 # it might be useful for your presentations!
-plot_geom_point  <- ggplot(___)
+plot_geom_point  <- ggplot(data = evals) + 
+  geom_point(aes(x = score, y = bty_avg))
 
-plot_geom_jitter <- ggplot(___)
+plot_geom_jitter <- ggplot(data = evals) + 
+  geom_jitter(aes(x = score, y = bty_avg))
 
 plot_geom_point + plot_geom_jitter
 ```
 
-*Add your narrative here.*
+Thje geom_jitter functions adds random variation to the points. This helps with over plotting as the original visualization was misleading because certain points were overlapping with others.
 
 ### Exercise 3
 

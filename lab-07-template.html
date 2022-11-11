@@ -382,12 +382,16 @@ teaching characteristics but also factors such as physical appearance
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># this uses the patchwork package loaded above</span></span>
 <span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co"># learn more about patchwork at https://patchwork.data-imaginist.com/</span></span>
 <span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co"># it might be useful for your presentations!</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>plot_geom_point  <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(___)</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>plot_geom_jitter <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(___)</span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>plot_geom_point <span class="sc">+</span> plot_geom_jitter</span></code></pre></div>
-<p><em>Add your narrative here.</em></p>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>plot_geom_point  <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> evals) <span class="sc">+</span> </span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> score, <span class="at">y =</span> bty_avg))</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>plot_geom_jitter <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> evals) <span class="sc">+</span> </span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="fu">aes</span>(<span class="at">x =</span> score, <span class="at">y =</span> bty_avg))</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>plot_geom_point <span class="sc">+</span> plot_geom_jitter</span></code></pre></div>
+<p>Thje geom_jitter functions adds random variation to the points. This
+helps with over plotting as the original visualization was misleading
+because certain points were overlapping with others.</p>
 </div>
 <div id="exercise-3" class="section level3">
 <h3>Exercise 3</h3>

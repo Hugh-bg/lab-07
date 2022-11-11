@@ -28,10 +28,14 @@ evals<-read.csv("data/evals.csv", row.names=1)
 ### Exercise 1
 
 ```{r viz-score}
-# add code here
+evals %>%
+  ggplot() + 
+    geom_bar(aes(x = score), color = "blue")
+
+  summary(evals$score)
 ```
 
-*Add your narrative here.*
+The distribution is left-skewed, this suggests that the majority of students rate the course highly. Summary statistics also demonstrate this claim as the mean score is 4.175 and the median score is 4.3. This is what I expected to see as students were not only taking into account teaching characteristics but also factors such as physical appearance .
 
 ### Exercise 2
 

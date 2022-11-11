@@ -39,7 +39,7 @@ The distribution is left-skewed, this suggests that the majority of students rat
 
 ### Exercise 2
 
-```{r viz-score-bty, eval = FALSE}
+```{r viz-score-bty}
 # add the code for each plot and assign them to the names as outlined below
 # remove eval = FALSE from the code chunk options
 # knit the document, and you'll see them appear next to each other
@@ -59,14 +59,14 @@ Thje geom_jitter functions adds random variation to the points. This helps with 
 
 ### Exercise 3
 
-```{r fit-score_bty_fit, eval = FALSE}
+```{r fit-score_bty_fit}
 # remove eval = FALSE from the code chunk options after filling in the blanks
 score_bty_fit <- linear_reg() %>%
   set_engine("lm") %>%
   fit(score~bty_avg, data = evals)
 ```
 
-```{r tidy-score_bty_fit, eval = FALSE}
+```{r tidy-score_bty_fit}
 # remove eval = FALSE from the code chunk options after filling in the blanks
 tidy(score_bty_fit)
 ```
@@ -75,8 +75,10 @@ score-hat = 3.88 + 0.67 * bty_avg
 
 ### Exercise 4
 
-```{r viz-score_bty_fit}
-# add your code here
+```{r viz-score_bty_fit, eval=FALSE}
+plot_geom_jitter <- ggplot(data = evals) + 
+  geom_jitter(aes(x = score, y = bty_avg)) + 
+  geom_smooth(method = "Im", formula = y~x, se = FALSE, color = "orange")
 ```
 
 ### Exercise 5
